@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday 🎉</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    font-family:Arial, sans-serif;
+    overflow:hidden;
+}
+
+.gift{
+    position:relative;
+    width:180px;
+    height:180px;
+    cursor:pointer;
+    transition:0.5s;
+}
+
+.box{
+    width:180px;
+    height:120px;
+    background:#e63946;
+    position:absolute;
+    bottom:0;
+    border-radius:10px;
+}
+
+.lid{
+    width:200px;
+    height:50px;
+    background:#d62828;
+    position:absolute;
+    left:-10px;
+    top:10px;
+    border-radius:10px;
+    transition:1s;
+}
+
+.ribbon-v{
+    position:absolute;
+    width:20px;
+    height:180px;
+    background:gold;
+    left:80px;
+}
+
+.ribbon-h{
+    position:absolute;
+    width:180px;
+    height:20px;
+    background:gold;
+    top:65px;
+}
+
+.open .lid{
+    transform:rotate(-35deg) translate(-70px,-80px);
+}
+
+.letter{
+    display:none;
+    width:80%;
+    max-width:600px;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    animation:fadeIn 1s;
+}
+
+.letter h1{
+    color:#e63946;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.open-text{
+    margin-top:20px;
+    color:white;
+    font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<div id="gift" class="gift">
+    <div class="lid"></div>
+    <div class="box"></div>
+    <div class="ribbon-v"></div>
+    <div class="ribbon-h"></div>
+</div>
+
+<p class="open-text">Klik kado untuk membukanya 🎁</p>
+
+<div id="letter" class="letter">
+    <h1>🎉 Selamat Ulang Tahun! 🎂</h1>
+
+    <p>
+        Hai <b>rinnn</b>,
+    </p>
+
+    <p>
+        Selamat ulang tahun! makasih yah
+         udah temenan sama aku selama ini
+        aku senang banget punya temen kayak kamu,bisa nemenin kamu
+    </p>
+
+    <p>
+        Semoga di usia yang baru ini kamu diberikan kesehatan,jangan
+        pernah menyerah yah.
+    </p>
+
+    <p>
+        Tetap menjadi diri kamu sendiri,jangan terlalu khawatir,fokus sama diri sendiri yahh🤍
+    </p>
+
+    <p>
+        🎈 Happy Birthday! 🎈
+    </p>
+
+    <p><b>- Dari orang yang kamu kenal❤️</b></p>
+</div>
+
+<script>
+const gift = document.getElementById("gift");
+const letter = document.getElementById("letter");
+
+gift.addEventListener("click", () => {
+    gift.classList.add("open");
+
+    setTimeout(() => {
+        gift.style.display = "none";
+        document.querySelector(".open-text").style.display = "none";
+        letter.style.display = "block";
+    }, 1000);
+});
+</script>
+
+</body>
+</html>
